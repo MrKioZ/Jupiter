@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Jupiter - {{ Query }}</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+
+      body{
+        background-color: black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>{{ Query }}</h2>
+      <div class="results">
+        {% for q in Queries %}
+          <div class="result">
+            <h3><a href="{{ q.Url }}">{{ q.title }}</a></h3>
+            <h5>{{ q.Url }}</h5>
+            <span>{{ q.Description }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
